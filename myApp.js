@@ -2,7 +2,12 @@ const express = require('express');
 const helmet = require('helmet');
 const app = express();
 
+const helmetVersion = require('helmet/package.json').version;
+if(helmetversion !== "3.21.3"){
+  throw new Error(`Helmet version mismatch: expected 3.21.3, got ${helmetVersion}`);
+}
 
+app.use(helmet());
 
 
 
